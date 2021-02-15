@@ -1,6 +1,6 @@
 <div>
 
-    <form wire:submit.prevent="register" class="space-y-2" method="POST">
+    <form wire:submit.prevent="register" class="space-y-2" "">
 
         <label for="name" class="block">
 
