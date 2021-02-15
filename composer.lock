@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9cd324ac612bc7a835d98d1ee2566cf",
+    "content-hash": "8386954eaccbce9d2a9346d4c6e91c86",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -191,46 +191,6 @@
                 }
             ],
             "time": "2021-01-20T22:51:39+00:00"
-        },
-        {
-            "name": "code-orange/turbolinks-location",
-            "version": "v1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/code-orange/turbolinks-location.git",
-                "reference": "27630f940e9a6930aa3aaba30c0a4d49153cddc2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/code-orange/turbolinks-location/zipball/27630f940e9a6930aa3aaba30c0a4d49153cddc2",
-                "reference": "27630f940e9a6930aa3aaba30c0a4d49153cddc2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": ">=5.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CodeOrange\\TurbolinksLocation\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Tim van Dalen",
-                    "email": "tim@code-orange.nl"
-                }
-            ],
-            "description": "Laravel middleware to insert Turbolinks-Location header into every response",
-            "support": {
-                "issues": "https://github.com/code-orange/turbolinks-location/issues",
-                "source": "https://github.com/code-orange/turbolinks-location/tree/v1.3"
-            },
-            "time": "2020-04-06T08:01:55+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

@@ -1,3 +1,13 @@
-import 'alpinejs'
-import 'livewire-turbolinks'
-import * as Turbo from "@hotwired/turbo"
+import {
+    start as startTurbo
+} from '@hotwired/turbo';
+
+import('./bootstrap');
+
+import('./elements/turbo-echo-stream-tag');
+
+import 'alpine-turbo-drive-adapter';
+
+import 'alpinejs';
+
+startTurbo();

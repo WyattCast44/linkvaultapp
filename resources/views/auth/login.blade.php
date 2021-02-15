@@ -1,5 +1,5 @@
 <div>
-
+    
     <form wire:submit.prevent="authenticate" class="space-y-2">
 
         <label for="email" class="block">
