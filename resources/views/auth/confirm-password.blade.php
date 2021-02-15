@@ -2,7 +2,7 @@
 
     <h2 class="text-2xl">Confirm your password to continue</h2>
 
-    <form wire:submit.prevent="attempt" class="space-y-2">
+    <form wire:submit.prevent="attempt" class="space-y-2" method="POST">
 
         <label for="password" class="block">
 

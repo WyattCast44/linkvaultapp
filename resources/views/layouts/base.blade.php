@@ -11,8 +11,8 @@
     <livewire:styles />
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
     <livewire:scripts />
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body>
     @yield('body')

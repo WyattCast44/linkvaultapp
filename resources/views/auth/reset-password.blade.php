@@ -8,7 +8,7 @@
         <x-alerts.error :message="$message" />
     @enderror
 
-    <form wire:submit.prevent="resetPassword" class="space-y-2">
+    <form wire:submit.prevent="resetPassword" class="space-y-2" method="POST">
 
         <label for="email" class="block">
 

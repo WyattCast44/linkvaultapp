@@ -10,4 +10,6 @@ import 'alpine-turbo-drive-adapter';
 
 import 'alpinejs';
 
+import 'livewire-turbolinks'
+
 startTurbo();

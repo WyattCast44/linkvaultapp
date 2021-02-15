@@ -4,7 +4,7 @@
         <x-alerts.success message="Password reset email sent!" />
     @endif
 
-    <form wire:submit.prevent="attempt" class="space-y-2">
+    <form wire:submit.prevent="attempt" class="space-y-2" method="POST">
 
         <label for="email" class="block">
 
@@ -31,4 +31,5 @@
         </div>
 
     </form>
+    
 </div>

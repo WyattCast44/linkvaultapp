@@ -1,9 +1,9 @@
 {
     "name": "personal_access_tokens",
     "schema": {
-        "id": "integer",
+        "id": "bigint",
         "tokenable_type": "string",
-        "tokenable_id": "integer",
+        "tokenable_id": "bigint",
         "name": "string",
         "token": "string",
         "abilities": "text",

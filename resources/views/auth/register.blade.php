@@ -1,6 +1,6 @@
 <div>
 
-    <form wire:submit.prevent="register" class="space-y-2">
+    <form wire:submit.prevent="register" class="space-y-2" method="POST">
 
         <label for="name" class="block">
 
@@ -15,6 +15,8 @@
                 required>
 
         </label>
+
+        {{ $name }}
 
         <x-errors.inline-validation key="name" />
 
