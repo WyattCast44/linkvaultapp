@@ -2,6 +2,6 @@
 
 @section('content')
     
-    <h1 class="text-4xl font-semibold text-center">B-Vault</h1>
+    <h1 class="text-4xl font-semibold text-center">Link Vault</h1>
 
 @endsection

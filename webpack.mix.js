@@ -5,3 +5,7 @@ mix.js("resources/js/app.js", "public/js")
         require("tailwindcss"),
     ])
     .sourceMaps();
+
+if (mix.inProduction()) {
+    mix.version()
+}
