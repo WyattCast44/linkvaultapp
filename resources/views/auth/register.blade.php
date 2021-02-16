@@ -16,8 +16,6 @@
 
         </label>
 
-        {{ $name }}
-
         <x-errors.inline-validation key="name" />
 
         <label for="email" class="block">
