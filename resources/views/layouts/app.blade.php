@@ -5,7 +5,7 @@
     <div class="py-2 text-center border-b">
         <h1>App.blade.php</h1>
         <div class="flex items-center justify-center space-x-2">
-            <form action="{{ route('logout') }}" "">
+            <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="btn-link">Logout</button>
             </form>    
