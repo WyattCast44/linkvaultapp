@@ -1,0 +1,11 @@
+{
+    "name": "links",
+    "schema": {
+        "id": "bigint",
+        "user_id": "bigint",
+        "hash_id": "string",
+        "url": "text",
+        "created_at": "datetime",
+        "updated_at": "datetime"
+    }
+}
