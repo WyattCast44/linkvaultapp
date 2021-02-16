@@ -1,0 +1,10 @@
+{
+    "name": "link_tag",
+    "schema": {
+        "id": "bigint",
+        "link_id": "bigint",
+        "tag_id": "bigint",
+        "created_at": "datetime",
+        "updated_at": "datetime"
+    }
+}

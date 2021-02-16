@@ -2,23 +2,27 @@
 
 namespace App\Models;
 
-use App\Domain\Support\HashIds\Traits\UsesHashIds;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Link extends Model
+class Tag extends Model
 {
-    use HasFactory, UsesHashIds;
+    use HasFactory;
 
-    public $guarded  = [];
+    protected $guarded = [];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function tags()
+    public function links()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Link::class);
     }
 }

@@ -2,19 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Link;
-use App\Models\User;
+use App\Models\Tag;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 
-class LinkFactory extends Factory
+class TagFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Link::class;
+    protected $model = Tag::class;
 
     /**
      * Define the model's default state.
@@ -24,10 +23,8 @@ class LinkFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory()->create()->id,
-            'hash_id' => null,
-            'url' => $url = $this->faker->url,
-            'url_hash' => Hash::make($url),
+            'name' => $name = $this->faker->words(rand(1, 2), true),
+            'slug' => Str::slug($name),
         ];
     }
 }

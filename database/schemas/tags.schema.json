@@ -1,11 +1,10 @@
 {
-    "name": "links",
+    "name": "tags",
     "schema": {
         "id": "bigint",
         "user_id": "bigint",
-        "hash_id": "string",
-        "url": "text",
-        "url_hash": "string",
+        "name": "string",
+        "slug": "string",
         "created_at": "datetime",
         "updated_at": "datetime"
     }

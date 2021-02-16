@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Link;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -25,6 +26,10 @@ class DatabaseSeeder extends Seeder
 
         $users->each(function ($user) {
             Link::factory(10)->create([
+                'user_id' => $user->id,
+            ]);
+
+            Tag::factory(10)->create([
                 'user_id' => $user->id,
             ]);
         });
