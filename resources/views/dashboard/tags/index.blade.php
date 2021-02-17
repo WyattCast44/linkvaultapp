@@ -6,7 +6,7 @@
             <h2 class="text-3xl font-semibold">Your Tags</h2>
             
             <label for="tag">
-                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model.lazy="newTag" wire:keydown.enter="createTag">
+                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model="newTag" wire:keydown.enter="createTag">
             </label>
         </div>
 
