@@ -20,6 +20,7 @@ class CreateLinksTable extends Migration
             $table->string('hash_id')->nullable()->index();
             $table->text('url');
             $table->string('url_hash')->index();
+            $table->schemalessAttributes('data')->nullable();
             $table->timestamps();
         });
     }

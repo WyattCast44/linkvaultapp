@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Link;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 
 class LinkFactory extends Factory
 {
@@ -27,7 +26,7 @@ class LinkFactory extends Factory
             'user_id' => User::factory()->create()->id,
             'hash_id' => null,
             'url' => $url = $this->faker->url,
-            'url_hash' => Hash::make($url),
+            'url_hash' => md5($url),
         ];
     }
 }

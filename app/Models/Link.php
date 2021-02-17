@@ -2,15 +2,36 @@
 
 namespace App\Models;
 
-use App\Domain\Support\HashIds\Traits\UsesHashIds;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use App\Domain\Support\HashIds\Traits\UsesHashIds;
+use Spatie\SchemalessAttributes\SchemalessAttributes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Link extends Model
 {
     use HasFactory, UsesHashIds;
 
     public $guarded  = [];
+
+    public $casts = [
+        'data' => 'array',
+    ];
+
+    public function getRouteKeyName()
+    {
+        return 'url_hash';
+    }
+
+    public function getExtraAttributesAttribute(): SchemalessAttributes
+    {
+        return SchemalessAttributes::createForModel($this, 'data');
+    }
+
+    public function scopeWithExtraAttributes(): Builder
+    {
+        return SchemalessAttributes::scopeWithSchemalessAttributes('data');
+    }
 
     public function user()
     {

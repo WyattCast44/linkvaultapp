@@ -6,9 +6,13 @@ use Embed\Embed as EmbedClient;
 
 class Embed
 {
+    public $data;
+
     public function create(string $url)
     {
-        $this->data = $this->parse(EmbedClient::create($url));
+        $info = EmbedClient::create($url);
+
+        $this->data = $this->parse($info);
 
         return $this;
     }
