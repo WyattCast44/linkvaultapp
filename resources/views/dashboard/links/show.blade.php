@@ -10,7 +10,7 @@
             </h2>
 
             <label for="tag">
-                <input type="text" name="tag" id="tag" placeholder="Add tag" wire:model="tag" wire:keydown.enter="addTag">
+                <input type="text" name="tag" id="tag" placeholder="Add tag" wire:model.lazy="tag" wire:keydown.enter="addTag">
             </label>
         </div>
 
