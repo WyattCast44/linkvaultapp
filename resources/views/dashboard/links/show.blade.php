@@ -4,7 +4,7 @@
 
         <div class="flex items-center justify-between my-5">
             <h2 class="text-3xl font-semibold truncate">
-                <a  href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener">
+                <a  href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener" title="Open link in new tab">
                     {{ $link->url }}
                 </a>
             </h2>

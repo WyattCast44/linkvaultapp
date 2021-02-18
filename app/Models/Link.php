@@ -20,7 +20,7 @@ class Link extends Model
 
     public function getRouteKeyName()
     {
-        return 'url_hash';
+        return 'hash_id';
     }
 
     public function getExtraAttributesAttribute(): SchemalessAttributes

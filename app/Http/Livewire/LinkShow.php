@@ -16,7 +16,7 @@ class LinkShow extends Component
 
     public function mount($link)
     {
-        $link = auth()->user()->links()->whereUrlHash($link)->first();
+        $link = auth()->user()->links()->whereHashId($link)->first();
 
         if (!$link) {
             return abort(404);
