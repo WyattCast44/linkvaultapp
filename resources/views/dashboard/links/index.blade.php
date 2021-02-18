@@ -15,7 +15,7 @@
                     >
                     
                     <div class="space-y-2 truncate">
-                        <a href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener" class="truncate">
+                        <a href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener" class="truncate" title="Open link in new tab">
                             {{ $link->url }}
                         </a>
 
@@ -23,7 +23,7 @@
                             
                             <div class="flex items-center space-x-1">
                                 @foreach ($link->tags as $tag)
-                                    <a href="{{ route('dashboard.tags.show', $tag) }}" class="block px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200">
+                                    <a href="{{ route('dashboard.tags.show', $tag) }}" class="block px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200" title="View tag">
                                         {{ $tag->name }}
                                     </a>
                                 @endforeach
@@ -36,10 +36,15 @@
 
                     <div class="flex items-center space-x-2">
 
-                        <a href="{{ route('dashboard.links.show', $link) }}" class="flex items-center justify-center">
-                            <x-icon-eye class="w-5 h-5 text-gray-500 hover:text-gray-700" />
+                        <button class="flex items-center justify-center" title="Manage link's tags">
+                            <x-icon-tag class="w-5 h-5 text-gray-500 hover:text-gray-700" />
+                        </button>
+                        
+                        <a href="{{ route('dashboard.links.show', $link) }}" class="flex items-center justify-center" title="View link">
+                            <x-icon-pencil-alt class="w-5 h-5 text-gray-500 hover:text-gray-700" />
                         </a>
-                        <button wire:click="deleteLink({{ $link->id }})" class="flex items-center justify-center">
+
+                        <button wire:click="deleteLink({{ $link->id }})" class="flex items-center justify-center" title="Delete this link">
                             <x-icon-trash class="w-5 h-5 text-gray-500 hover:text-gray-700" />
                         </button>
 
