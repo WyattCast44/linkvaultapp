@@ -6,9 +6,13 @@
             <h2 class="text-3xl font-semibold">Your Links</h2>
         </div>
 
-        <ul class="mb-8 bg-white border divide-y">
+        <ul class="mb-8 bg-white border divide-y" x-data="{ link: @entangle('activeLink') }">
             @forelse ($links as $link)
-                <li class="flex items-center justify-between p-3">
+                <li 
+                    tabindex="-1"
+                    id="link-id-{{ $link->hash_id }}" 
+                    class="flex items-center justify-between p-3 outline-none focus:bg-gray-50 focus:ring-2 ring-blue-600 ring-offset-1" 
+                    >
                     
                     <div class="space-y-2 truncate">
                         <a href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener" class="truncate">
@@ -52,3 +56,17 @@
     </div>
 
 </div>
+
+@push('scripts')
+    <script>
+        document.addEventListener('livewire:load', function () {
+            hotkeys('j', function (event, handler) {
+                event.preventDefault()
+                Livewire.emit('move-focus')
+            });
+            Livewire.on('move-focus-to-next-link', linkId => {
+                document.querySelector(linkId).focus();
+            });
+        });
+    </script>
+@endpush
