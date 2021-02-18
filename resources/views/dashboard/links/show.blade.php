@@ -22,7 +22,7 @@
                     <div class="flex items-center space-x-2">
 
                         <button wire:click="removeTag({{ $tag->id }})" class="flex items-center justify-center">
-                            <x-icon-trash class="w-5 h-5 text-gray-500 hover:text-gray-700" />
+                            <x-icon-backspace class="w-5 h-5 text-gray-500 hover:text-gray-700" />
                         </button>
 
                     </div>

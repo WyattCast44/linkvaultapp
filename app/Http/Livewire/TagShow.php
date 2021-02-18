@@ -24,6 +24,16 @@ class TagShow extends Component
         $this->links = $tag->links;
     }
 
+    public function unlinkTag($link)
+    {
+        $link = auth()->user()->links()->find($link);
+
+        if ($link) {
+            $link->tags()->detach($this->tag->id);
+            $this->links = $this->tag->refresh()->links;
+        }
+    }
+
     public function render()
     {
         return view('dashboard.tags.show')

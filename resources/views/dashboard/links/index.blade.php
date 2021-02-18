@@ -4,10 +4,6 @@
 
         <div class="flex items-center justify-between my-5">
             <h2 class="text-3xl font-semibold">Your Links</h2>
-            
-            <label for="url">
-                <input type="url" name="url" id="url" placeholder="Create link" wire:model="newLink" wire:keydown.enter="createLink">
-            </label>
         </div>
 
         <ul class="mb-8 bg-white border divide-y">

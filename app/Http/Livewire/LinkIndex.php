@@ -10,27 +10,16 @@ class LinkIndex extends Component
 
     public $newLink;
 
+    protected $listeners = ['linkAdded' => 'updateLinks'];
+
     public function mount()
     {
         $this->links = auth()->user()->links;
     }
 
-    public function createLink()
+    public function updateLinks()
     {
-        $this->validate([
-            'newLink' => 'required|url'
-        ]);
-
-        $url = $this->newLink;
-
-        $this->newLink = "";
-
-        auth()->user()->links()->updateOrCreate([
-            'url' => $url,
-            'url_hash' => md5($url),
-        ]);
-
-        $this->links = auth()->user()->links;
+        $this->links = auth()->user()->refresh()->links;
     }
 
     public function deleteLink($link)
