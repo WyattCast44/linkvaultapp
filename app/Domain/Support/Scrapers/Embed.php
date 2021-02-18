@@ -3,6 +3,7 @@
 namespace App\Domain\Support\Scrapers;
 
 use Embed\Embed as EmbedClient;
+use Exception;
 
 class Embed
 {
@@ -10,7 +11,11 @@ class Embed
 
     public function create(string $url)
     {
-        $info = EmbedClient::create($url);
+        try {
+            $info = EmbedClient::create($url);
+        } catch (Exception $e) {
+            $info = [];
+        }
 
         $this->data = $this->parse($info);
 
@@ -20,29 +25,29 @@ class Embed
     public function parse($response)
     {
         $data = collect([
-            'title' => $response->title,
-            'description' => $response->description,
-            'url' => $response->url,
-            'type' => $response->type,
-            'tags' => collect($response->tags),
-            'image' => $response->image,
-            'image_width' => $response->imageWidth,
-            'image_height' => $response->imageHeight,
-            'images' => collect($response->images),
-            'embed_code' => $response->code,
-            'embed_width' => $response->width,
-            'embed_height' => $response->height,
-            'embed_aspect' => $response->aspectRatio,
-            'author_name' => $response->authorName,
-            'author_url' => $response->authorUrl,
-            'provider_name' => $response->providerName,
-            'provider_url' => $response->providerUrl,
-            'provider_icon' => $response->providerIcon,
-            'provider_icons' => $response->providerIcons,
-            'published_date' => $response->publishedDate,
-            'license' => $response->license,
-            'linked_data' => $response->linkedData,
-            'feeds' => $response->feeds,
+            'title' => optional($response)->title,
+            'description' => optional($response)->description,
+            'url' => optional($response)->url,
+            'type' => optional($response)->type,
+            'tags' => collect(optional($response)->tags),
+            'image' => optional($response)->image,
+            'image_width' => optional($response)->imageWidth,
+            'image_height' => optional($response)->imageHeight,
+            'images' => collect(optional($response)->images),
+            'embed_code' => optional($response)->code,
+            'embed_width' => optional($response)->width,
+            'embed_height' => optional($response)->height,
+            'embed_aspect' => optional($response)->aspectRatio,
+            'author_name' => optional($response)->authorName,
+            'author_url' => optional($response)->authorUrl,
+            'provider_name' => optional($response)->providerName,
+            'provider_url' => optional($response)->providerUrl,
+            'provider_icon' => optional($response)->providerIcon,
+            'provider_icons' => optional($response)->providerIcons,
+            'published_date' => optional($response)->publishedDate,
+            'license' => optional($response)->license,
+            'linked_data' => optional($response)->linkedData,
+            'feeds' => optional($response)->feeds,
         ]);
 
         return $data;

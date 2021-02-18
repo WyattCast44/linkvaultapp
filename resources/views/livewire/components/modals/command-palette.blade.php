@@ -71,7 +71,7 @@
         document.addEventListener('livewire:load', function () {
             hotkeys('ctrl+shift+p', function (event, handler) {
                 event.preventDefault()
-                @this.set('showCommandPalette', true);
+                Livewire.emit('openCommandPalette')
             });
 
             hotkeys('escape', function (event, handler) {

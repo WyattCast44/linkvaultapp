@@ -15,6 +15,7 @@ class LinkIndex extends Component
     public function mount()
     {
         $this->links = auth()->user()->links;
+        // dd($this->links->first()->data);
     }
 
     public function updateLinks()

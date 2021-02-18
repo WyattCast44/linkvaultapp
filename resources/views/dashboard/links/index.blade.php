@@ -17,14 +17,17 @@
 
                         @if ($link->tags->count() > 0)
                             
-                        <div class="flex items-center space-x-1">
-                            @foreach ($link->tags as $tag)
-                                <a href="{{ route('dashboard.tags.show', $tag) }}" class="block px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200">
-                                    {{ $tag->name }}
-                                </a>
-                            @endforeach
-                        </div>
+                            <div class="flex items-center space-x-1">
+                                @foreach ($link->tags as $tag)
+                                    <a href="{{ route('dashboard.tags.show', $tag) }}" class="block px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200">
+                                        {{ $tag->name }}
+                                    </a>
+                                @endforeach
+                            </div>
+
                         @endif
+
+                        
                     </div>
 
                     <div class="flex items-center space-x-2">

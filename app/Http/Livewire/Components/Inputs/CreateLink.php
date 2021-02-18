@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Components\Inputs;
 
+use App\Jobs\ProcessLink;
 use Livewire\Component;
 
 class CreateLink extends Component
@@ -18,10 +19,12 @@ class CreateLink extends Component
 
         $this->newLinkUrl = "";
 
-        auth()->user()->links()->updateOrCreate([
+        $link = auth()->user()->links()->updateOrCreate([
             'url' => $url,
             'url_hash' => md5($url),
         ]);
+
+        ProcessLink::dispatch($link);
 
         $this->emit('linkAdded');
     }

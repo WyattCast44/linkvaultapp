@@ -24,7 +24,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/links/{link}', LinkShow::class)->name('dashboard.links.show')->middleware('auth');
 });
 
-Route::get('/test', function (Embed $client) {
-    // $client->create('https://laravel-livewire.com/docs/2.x/input-validation#real-time-validation');
-    // dd($client->data);
-});
+// Route::get('/test', function (Embed $client) {
+//     $client->create('https://laravel-livewire.com/docs/2.x/reference/s2');
+//     dd($client->data);
+// });

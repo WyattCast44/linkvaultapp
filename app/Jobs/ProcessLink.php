@@ -4,13 +4,11 @@ namespace App\Jobs;
 
 use App\Models\Link;
 use Illuminate\Bus\Queueable;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Queue\SerializesModels;
 use App\Domain\Support\Scrapers\Embed;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class ProcessLink implements ShouldQueue
 {
@@ -36,8 +34,6 @@ class ProcessLink implements ShouldQueue
     public function handle(Embed $client)
     {
         $embed = $client->create($this->link->url);
-
-        Log::info(json_encode($embed), json_encode($embed->data));
 
         $this->link->data = $embed->data->toArray();
 
