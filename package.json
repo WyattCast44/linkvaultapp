@@ -16,6 +16,7 @@
         "alpine-turbo-drive-adapter": "^1.0.1",
         "alpinejs": "^2.8.0",
         "cross-env": "^7.0.3",
+        "hotkeys-js": "^3.8.2",
         "laravel-echo": "^1.10.0",
         "laravel-mix": "^6.0.6",
         "livewire-turbolinks": "github:livewire/turbolinks",

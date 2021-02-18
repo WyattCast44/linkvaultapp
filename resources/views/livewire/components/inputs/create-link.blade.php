@@ -14,3 +14,14 @@
             class="w-full pl-10 border border-gray-300 bg-gray-50">
     </label>
 </div>
+
+@push('scripts')
+    <script>
+        document.addEventListener('livewire:load', function () {
+            hotkeys('/', function (event, handler) {
+                event.preventDefault()
+                document.querySelector('#newLinkUrl').focus()
+            });
+        })        
+    </script>
+@endpush

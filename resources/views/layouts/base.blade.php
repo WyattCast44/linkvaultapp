@@ -16,6 +16,10 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="bg-gray-100">
+    
     @yield('body')
+    
+    <livewire:components.modals.command-palette />
+    @stack('scripts')
 </body>
 </html>

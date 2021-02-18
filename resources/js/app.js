@@ -6,4 +6,6 @@ import 'alpine-turbo-drive-adapter';
 
 import 'alpinejs';
 
+import hotkeys from 'hotkeys-js';
+
 startTurbo();
