@@ -4077,10 +4077,9 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-livewire-turbolinks@^0.1.1:
+"livewire-turbolinks@github:livewire/turbolinks":
   version "0.1.1"
-  resolved "https://registry.yarnpkg.com/livewire-turbolinks/-/livewire-turbolinks-0.1.1.tgz#95d80b40cd7c672d3daebea56c16fbbf4c113ccd"
-  integrity sha512-XQaH+HreLse5/6Ad6Rz2jC5PmV7Pa/Q3r46sGcmTkQHlh3w25KK7FF6TsRU8Pu9SMJWXRgoHh2Gb0b8xQPFD0Q==
+  resolved "https://codeload.github.com/livewire/turbolinks/tar.gz/93255b4405dc8bdb5ca2b087b42f49da51778bb3"
 
 loader-runner@^4.2.0:
   version "4.2.0"

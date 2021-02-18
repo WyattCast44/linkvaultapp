@@ -18,7 +18,7 @@
         "cross-env": "^7.0.3",
         "laravel-echo": "^1.10.0",
         "laravel-mix": "^6.0.6",
-        "livewire-turbolinks": "^0.1.1",
+        "livewire-turbolinks": "github:livewire/turbolinks",
         "postcss": "^8.1.14",
         "pusher-js": "^7.0.2",
         "tailwindcss": "^2.0.2",

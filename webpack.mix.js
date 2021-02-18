@@ -4,7 +4,10 @@ mix.js("resources/js/app.js", "public/js")
     .postCss("resources/css/app.css", "public/css", [
         require("tailwindcss"),
     ])
-    .sourceMaps();
+
+mix.js("resources/js/livewire-turbolinks.js", "public/js")
+
+mix.sourceMaps();
 
 if (mix.inProduction()) {
     mix.version()

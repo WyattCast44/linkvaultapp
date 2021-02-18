@@ -24,7 +24,7 @@ class Login extends Component
         $status = Auth::attempt([
             'email' => $this->email,
             'password' => $this->password
-        ]);
+        ], true);
 
         event(new Authenticated('web', User::where('email', $this->email)->first()));
 

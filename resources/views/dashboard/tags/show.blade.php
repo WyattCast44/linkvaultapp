@@ -6,7 +6,7 @@
             <h2 class="text-3xl font-semibold">{{ $tag->name }}</h2>
         </div>
 
-        <ul class="mb-8 border divide-y">
+        <ul class="mb-8 bg-white border divide-y">
             @forelse ($links as $link)
                 <li class="flex items-center justify-between p-3">
                     <a href="{{ $link->url }}" target="_blank" rel="noopener">{{ $link->url }}</a>

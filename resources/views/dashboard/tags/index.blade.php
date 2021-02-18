@@ -6,11 +6,11 @@
             <h2 class="text-3xl font-semibold">Your Tags</h2>
             
             <label for="tag">
-                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model="newTag" wire:keydown.enter="createTag">
+                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model="newTag" wire:keydown.enter="createTag" autocomplete="off">
             </label>
         </div>
 
-        <ul class="mb-8 border divide-y">
+        <ul class="mb-8 bg-white border divide-y">
             @forelse ($tags as $tag)
                 <li class="flex items-center justify-between p-3">
                     <a href="{{ route('dashboard.tags.show', $tag) }}">{{ $tag->name }}</a>

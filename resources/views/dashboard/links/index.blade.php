@@ -10,7 +10,7 @@
             </label>
         </div>
 
-        <ul class="mb-8 border divide-y">
+        <ul class="mb-8 bg-white border divide-y">
             @forelse ($links as $link)
                 <li class="flex items-center justify-between p-3">
                     
@@ -23,7 +23,7 @@
                             
                         <div class="flex items-center space-x-1">
                             @foreach ($link->tags as $tag)
-                                <a href="{{ route('dashboard.tags.show', $tag) }}" class="block px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-100">
+                                <a href="{{ route('dashboard.tags.show', $tag) }}" class="block px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200">
                                     {{ $tag->name }}
                                 </a>
                             @endforeach
