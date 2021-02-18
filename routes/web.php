@@ -24,7 +24,15 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/links/{link}', LinkShow::class)->name('dashboard.links.show')->middleware('auth');
 });
 
-// Route::get('/test', function (Embed $client) {
-//     $client->create('https://laravel-livewire.com/docs/2.x/reference/s2');
-//     dd($client->data);
-// });
+Route::get('/test', function () {
+    $commands = config('command-palette');
+    return app()->make($commands['logout']['handler'])->handle();
+});
+
+/**
+ * logout -> expect to logout and redirect
+ * tag:laravel -> expect to go to laravel tag page
+ * make:tag laravel -> expect to create a tag called laravel and then redirect?
+ * make:link https://url -> expect to create a link and then redirect?
+ * search:domain laravel.com
+ */

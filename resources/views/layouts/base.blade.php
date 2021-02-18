@@ -20,6 +20,7 @@
     @yield('body')
     
     <livewire:components.modals.command-palette />
+
     @stack('scripts')
 </body>
 </html>

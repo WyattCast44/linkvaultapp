@@ -37,6 +37,21 @@
             x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             class="inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
 
+
+            <label for="command-palette-input">
+
+                <input type="text" name="command" id="command-palette-input" list="commands" class="w-full" x-on:keydown.enter="parseCommandArgs()">
+
+                <datalist id="commands">
+
+                    @foreach ($commands as $key => $value)
+                        <option value="{{ $key }}">
+                    @endforeach
+
+                  </datalist>
+
+            </label>
+
             {{-- <div>
                 <div class="flex items-center justify-center w-12 h-12 mx-auto bg-green-100 rounded-full">
                     <!-- Heroicon name: outline/check -->
@@ -73,12 +88,29 @@
             hotkeys('ctrl+shift+p', function (event, handler) {
                 event.preventDefault()
                 Livewire.emit('openCommandPalette')
+                
             });
 
             hotkeys('escape', function (event, handler) {
                 event.preventDefault()
                 Livewire.emit('closeModals')
             });
-        })        
+
+            let target = document.querySelector('#command-palette-input');
+
+            let observer = new IntersectionObserver(function() {
+                target.focus()
+            });
+
+            observer.observe(target)
+        });
+
+        function parseCommandArgs() {
+                let input = document.querySelector('#command-palette-input').value;
+                let parts  = input.split(' ');
+                let command = parts[0];
+                let args = parts.splice(1);
+                @this.performAction(command, args)
+            }
     </script>
 @endpush
