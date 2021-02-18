@@ -14,7 +14,7 @@
             @forelse ($links as $link)
                 <li class="flex items-center justify-between p-3">
                     
-                    <div class="space-y-2">
+                    <div class="space-y-2 truncate">
                         <a href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener" class="truncate">
                             {{ $link->url }}
                         </a>
