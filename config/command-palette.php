@@ -15,19 +15,6 @@ return [
             'handler' => Logout::class,
         ],
 
-        'tag' => [
-            'description' => 'Navigate to the given tag\'s page',
-            'handler' => NavigateToTagPage::class,
-        ],
-
-        'links' => [
-            'description' => 'Navigate to the links page',
-            'handler' => NavigateToPage::class,
-            'default_args' => [
-                'dashboard.links.index'
-            ],
-        ],
-
         'make:tag' => [
             'description' => 'Create a new tag with the given name',
             'handler' => MakeTag::class,
