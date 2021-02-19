@@ -30,6 +30,8 @@ class Login extends Component
 
         if ($status) {
             return redirect()->intended(route('dashboard'));
+        } else {
+            $this->addError('auth', 'The given email/password combo did not match any accounts, please try again.');
         }
     }
 
