@@ -19,13 +19,13 @@
 
     <div class="mb-2 text-center bg-white border-b">
         <div class="flex items-center justify-between max-w-3xl mx-auto border-l border-r divide-x">
-            <a href="{{ route('dashboard') }}" class="w-full py-2 text-center hover:bg-gray-200 hover:no-underline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600">
+            <a href="{{ route('dashboard') }}" class="z-0 w-full py-2 text-center hover:bg-gray-200 hover:no-underline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600">
                 Dashboard
             </a>
-            <a href="{{ route('dashboard.links.index') }}" class="w-full py-2 text-center hover:bg-gray-200 hover:no-underline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600">
+            <a href="{{ route('dashboard.links.index') }}" class="z-0 w-full py-2 text-center hover:bg-gray-200 hover:no-underline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600">
                 Links
             </a>
-            <a href="{{ route('dashboard.tags.index') }}" class="w-full py-2 text-center hover:bg-gray-200 hover:no-underline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600">
+            <a href="{{ route('dashboard.tags.index') }}" class="z-0 w-full py-2 text-center hover:bg-gray-200 hover:no-underline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600">
                 Tags
             </a>
         </div>
