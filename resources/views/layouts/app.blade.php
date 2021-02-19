@@ -4,10 +4,10 @@
 
     <header class="sticky top-0">
         
-        <div class="py-2 text-center bg-white border-b">
-            <div class="flex items-center justify-between max-w-3xl px-3 mx-auto space-x-2">
+        <div class="bg-white border-b">
+            <div class="flex items-center justify-between max-w-3xl p-3 mx-auto space-x-2">
                 <h1>
-                    <a href="{{ route('dashboard') }}" class="font-mono font-semibold hover:no-underline">
+                    <a href="{{ route('dashboard') }}" class="font-mono font-semibold tracking-tight text-gray-900 hover:no-underline hover:text-gray-900">
                         Link Vault 🔒
                     </a>
                 </h1>

@@ -12,7 +12,7 @@
 
     <!-- Scripts -->
     <livewire:scripts />
-    <script src="{{ mix('js/livewire-turbolinks.js') }}" data-turbolinks-eval="false" data-turbo-eval="false"></script>
+    <script src="{{ mix('js/livewire-turbolinks.js') }}" data-turbo-eval="false"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="bg-gray-100">

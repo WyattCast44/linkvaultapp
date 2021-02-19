@@ -42,7 +42,14 @@
 
                 <p class="mb-2 text-sm font-semibold text-gray-600">Command Palette</p>
 
-                <input type="text" name="command" id="command-palette-input" list="commands" class="w-full" x-on:keydown.enter="parseCommandArgs()">
+                <input 
+                    type="text" 
+                    class="w-full" 
+                    list="commands" 
+                    spellcheck="false"
+                    id="command-palette-input" 
+                    x-on:keydown.enter="parseCommandArgs()"
+                    x-on:keydown.tab="keepFocusInInput($event)">
 
                 <datalist id="commands">
 
@@ -83,11 +90,17 @@
         });
 
         function parseCommandArgs() {
-                let input = document.querySelector('#command-palette-input').value;
-                let parts  = input.split(' ');
-                let command = parts[0];
-                let args = parts.splice(1);
-                @this.performAction(command, args)
-            }
+            let input = document.querySelector('#command-palette-input').value;
+            let parts  = input.split(' ');
+            let command = parts[0];
+            let args = parts.splice(1);
+            @this.performAction(command, args)
+        }
+
+        function keepFocusInInput($event) {
+            $event.preventDefault()
+            $event.target.value = $event.target.value + " "
+            $event.target.focus()
+        }
     </script>
 @endpush
