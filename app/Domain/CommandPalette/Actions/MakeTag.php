@@ -13,11 +13,11 @@ class MakeTag
             'name' => $args,
         ];
 
-        $valid = Validator::make($args, [
+        $validitor = Validator::make($args, [
             'name.*' => ['string', 'required']
         ]);
 
-        if ($valid->fails()) {
+        if ($validitor->fails()) {
             return;
         }
 
