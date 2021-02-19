@@ -74,13 +74,10 @@
 @push('scripts')
     <script>
         document.addEventListener('livewire:load', function () {
-            hotkeys('j', function (event, handler) {
-                event.preventDefault()
-                Livewire.emit('move-focus')
-            });
-            Livewire.on('move-focus-to-next-link', linkId => {
-                document.querySelector(linkId).focus();
-            });
+            // hotkeys('j', function (event, handler) {
+            //     event.preventDefault()
+            //     Livewire.emit('move-focus')
+            // });
         });
     </script>
 @endpush
