@@ -3,10 +3,9 @@
 namespace App\Http\Livewire\Auth;
 
 use App\Models\User;
-use Illuminate\Auth\Events\Authenticated;
-use Illuminate\Auth\Events\Login as EventsLogin;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Authenticated;
 
 class Login extends Component
 {

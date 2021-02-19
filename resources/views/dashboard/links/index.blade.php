@@ -11,8 +11,7 @@
                 <li 
                     tabindex="-1"
                     id="link-id-{{ $link->hash_id }}" 
-                    class="flex items-center justify-between p-3 outline-none focus:bg-gray-50 focus:ring-2 ring-blue-600 ring-offset-1" 
-                    >
+                    class="flex items-center justify-between p-3 outline-none focus:bg-gray-50 focus:ring-2 ring-blue-600 ring-offset-1">
                     
                     <div class="space-y-2 truncate">
                         <a href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener" class="truncate" title="Open link in new tab">
@@ -36,15 +35,25 @@
 
                     <div class="flex items-center space-x-2">
 
-                        <button class="flex items-center justify-center" title="Manage link's tags">
+                        <button 
+                            aria-label="Manage link's tags"    
+                            title="Manage link's tags"
+                            class="flex items-center justify-center" >
                             <x-icon-tag class="w-5 h-5 text-gray-500 hover:text-gray-700" />
                         </button>
                         
-                        <a href="{{ route('dashboard.links.show', $link) }}" class="flex items-center justify-center" title="View link">
+                        <a 
+                            title="View link"
+                            aria-label="View link"
+                            class="flex items-center justify-center" 
+                            href="{{ route('dashboard.links.show', $link) }}">
                             <x-icon-pencil-alt class="w-5 h-5 text-gray-500 hover:text-gray-700" />
                         </a>
 
-                        <button wire:click="deleteLink({{ $link->id }})" class="flex items-center justify-center" title="Delete this link">
+                        <button 
+                            title="Delete this link"
+                            aria-label="Delete this link"
+                            wire:click="deleteLink({{ $link->id }})" class="flex items-center justify-center">
                             <x-icon-trash class="w-5 h-5 text-gray-500 hover:text-gray-700" />
                         </button>
 

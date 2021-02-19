@@ -10,7 +10,7 @@
             </h2>
 
             <label for="tag">
-                <input type="text" name="tag" id="tag" placeholder="Add tag" wire:model="tag" wire:keydown.enter="addTag" autocomplete="off">
+                <input type="text" name="tag" id="tag" placeholder="Add tag" wire:model="tag" wire:keydown.enter="addTag" autocomplete="off" aria-label="Add tag to link">
             </label>
         </div>
 
@@ -21,7 +21,11 @@
 
                     <div class="flex items-center space-x-2">
 
-                        <button wire:click="removeTag({{ $tag->id }})" class="flex items-center justify-center">
+                        <button 
+                            title="Remove tag from link"
+                            aria-label="Remove tag from link"
+                            wire:click="removeTag({{ $tag->id }})" 
+                            class="flex items-center justify-center">
                             <x-icon-backspace class="w-5 h-5 text-gray-500 hover:text-gray-700" />
                         </button>
 
