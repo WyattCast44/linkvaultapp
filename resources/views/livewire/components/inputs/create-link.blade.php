@@ -10,6 +10,7 @@
             autocomplete="off"
             placeholder="Save a URL"
             wire:model="newLinkUrl"
+            aria-label="Save a new URL"
             wire:keydown.enter="createLink"
             class="w-full pl-10 border border-t-0 border-b-0 border-gray-300 bg-gray-50">
     </label>
