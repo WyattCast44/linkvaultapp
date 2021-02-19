@@ -46,7 +46,7 @@ class CommandPalette extends Component
                 $command = $this->commands[$action];
                 return app()->make($command['handler'])->handle(...$command['default_args']);
             } else {
-                return app()->make($this->commands[$action]['handler'])->handle();
+                return app()->make($this->commands[$action]['handler'])->handle($args);
             }
         }
     }

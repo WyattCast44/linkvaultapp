@@ -1,6 +1,7 @@
 <?php
 
 use App\Domain\CommandPalette\Actions\Logout;
+use App\Domain\CommandPalette\Actions\MakeTag;
 use App\Domain\CommandPalette\Actions\NavigateToPage;
 use App\Domain\CommandPalette\Actions\NavigateToTagPage;
 
@@ -24,6 +25,11 @@ return [
             'default_args' => [
                 'dashboard.links.index'
             ],
+        ],
+
+        'make:tag' => [
+            'description' => 'Create a new tag with the given name',
+            'handler' => MakeTag::class,
         ]
 
     ],
