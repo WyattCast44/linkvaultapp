@@ -13,7 +13,9 @@
                 </h1>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn-link">Logout</button>
+                    <button type="submit" class="btn-link" aria-label="Logout" title="Logout">
+                        <x-icon-logout class="w-6 h-6 text-gray-600 hover:text-gray-800" />
+                    </button>
                 </form>    
             </div>
         </div>
