@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     
     <!-- Styles -->
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>    
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <livewire:styles />
 

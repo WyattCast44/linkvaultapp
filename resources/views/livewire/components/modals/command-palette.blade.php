@@ -1,4 +1,5 @@
 <div 
+    x-cloak
     x-show="showCommandPalette"
     class="fixed inset-0 overflow-y-auto" 
     x-on:keydown.escape="showCommandPalette = false"
