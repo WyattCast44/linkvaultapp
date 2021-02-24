@@ -1,0 +1,47 @@
+{
+    "url": "https://twitter.com/m1guelpf/status/1364409717829689345",
+    "tags": [],
+    "type": "rich",
+    "feeds": null,
+    "image": null,
+    "title": "https://twitter.com/m1guelpf/status/1364409717829689345",
+    "images": [],
+    "license": null,
+    "author_url": "https://twitter.com/m1guelpf",
+    "embed_code": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">😯 Microsoft is working on a smart coach to help you organize your tasks!<br><br>Here&#39;s the patent 👇<a href=\"https://t.co/7BCaq0zuom\">https://t.co/7BCaq0zuom</a> <a href=\"https://t.co/MEa1NRAw2R\">pic.twitter.com/MEa1NRAw2R</a></p>&mdash; Miguel Piedrafita 🥬 (@m1guelpf) <a href=\"https://twitter.com/m1guelpf/status/1364409717829689345?ref_src=twsrc%5Etfw\">February 24, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>",
+    "author_name": "Miguel Piedrafita 🥬",
+    "description": null,
+    "embed_width": 550,
+    "image_width": null,
+    "linked_data": null,
+    "embed_aspect": null,
+    "embed_height": null,
+    "image_height": null,
+    "provider_url": "https://twitter.com",
+    "provider_icon": "https://abs.twimg.com/responsive-web/client-web-legacy/icon-ios.b1fc7275.png",
+    "provider_name": "Twitter",
+    "provider_icons": [
+        {
+            "url": "https://twitter.com/favicon.ico",
+            "mime": "image/x-icon",
+            "size": 256,
+            "width": 16,
+            "height": 16
+        },
+        {
+            "url": "https://abs.twimg.com/favicons/twitter.ico",
+            "mime": "image/vnd.microsoft.icon",
+            "size": 1024,
+            "width": 32,
+            "height": 32
+        },
+        {
+            "url": "https://abs.twimg.com/responsive-web/client-web-legacy/icon-ios.b1fc7275.png",
+            "mime": "image/png",
+            "size": 1048576,
+            "width": 1024,
+            "height": 1024
+        }
+    ],
+    "published_date": null
+}

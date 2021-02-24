@@ -19,6 +19,10 @@ class TagIndex extends Component
 
     public function createTag()
     {
+        $this->validate([
+            'newTag' => ['required', 'string', 'min:2', 'max:255']
+        ]);
+
         auth()->user()->tags()->updateOrCreate([
             'name' => $this->newTag,
             'slug' => Str::slug($this->newTag)

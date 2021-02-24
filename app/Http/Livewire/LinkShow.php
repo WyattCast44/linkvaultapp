@@ -30,6 +30,10 @@ class LinkShow extends Component
 
     public function addTag()
     {
+        $this->validate([
+            'tag' => ['required', 'string', 'min:2', 'max:255']
+        ]);
+
         $tag = auth()->user()->tags()->updateOrCreate([
             'name' => $this->tag,
             'slug' => Str::slug($this->tag)
