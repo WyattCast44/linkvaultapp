@@ -37,6 +37,8 @@ class ProcessLink implements ShouldQueue
 
         $this->link->data = $embed->data->toArray();
 
+        $this->link->parsed_at = now();
+
         $this->link->save();
     }
 }

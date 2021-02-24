@@ -11,17 +11,41 @@
         </div>
 
         <ul class="mb-8 bg-white border divide-y">
+            
             @forelse ($tags as $tag)
+            
                 <li class="flex items-center justify-between p-3">
+                    
                     <a href="{{ route('dashboard.tags.show', $tag) }}">{{ $tag->name }}</a>
-                    <button wire:click="deleteTag({{ $tag->id }})" class="flex items-center justify-center">
-                        <x-icon-trash class="w-5 h-5 text-gray-500 hover:text-gray-700" />
-                    </button>
+
+                    <div class="flex items-center space-x-2">
+                        
+                        <a 
+                            title="Edit link"
+                            aria-label="Edit link"
+                            class="flex items-center justify-center" 
+                            href="#">
+                            <x-icon-pencil-alt class="w-5 h-5 text-gray-500 hover:text-gray-700" />
+                        </a>
+            
+                        <button 
+                            title="Delete tag"
+                            aria-label="Delete tag"
+                            wire:click="deleteTag({{ $tag->id }})" 
+                            class="flex items-center justify-center">
+                            <x-icon-trash class="w-5 h-5 text-gray-500 hover:text-gray-700" />
+                        </button>
+
+                    </div>
+            
                 </li>
+
             @empty
+                
                 <li class="p-3">
                     No tags yet
                 </li>
+
             @endforelse
         </ul>
 

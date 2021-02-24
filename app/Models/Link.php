@@ -22,6 +22,10 @@ class Link extends Model
     {
         return 'hash_id';
     }
+    public function hasBeenParsed()
+    {
+        return ($this->parsed_at) ? true : false;
+    }
 
     public function getExtraAttributesAttribute(): SchemalessAttributes
     {

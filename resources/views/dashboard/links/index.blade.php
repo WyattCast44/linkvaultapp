@@ -14,8 +14,13 @@
                     class="flex items-center justify-between p-3 outline-none focus:bg-gray-50 focus:ring-2 ring-blue-600 ring-offset-1">
                     
                     <div class="space-y-2 truncate">
+
                         <a href="{{ $link->url }}" target="_blank" referrerpolicy="no-referrer" rel="noopener" class="truncate" title="Open link in new tab">
-                            {{ $link->url }}
+                            @if ($link->hasBeenParsed())
+                                {{ $link->data['title'] }}
+                            @else 
+                                {{ $link->url }}
+                            @endif
                         </a>
 
                         @if ($link->tags->count() > 0)

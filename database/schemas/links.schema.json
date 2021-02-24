@@ -8,6 +8,7 @@
         "url_hash": "string",
         "data": "json",
         "created_at": "datetime",
-        "updated_at": "datetime"
+        "updated_at": "datetime",
+        "parsed_at": "datetime"
     }
 }

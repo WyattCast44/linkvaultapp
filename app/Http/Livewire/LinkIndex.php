@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Link;
 use Livewire\Component;
 
 class LinkIndex extends Component
