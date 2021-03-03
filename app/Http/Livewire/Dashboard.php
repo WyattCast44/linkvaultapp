@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Link;
 use Livewire\Component;
 
 class Dashboard extends Component
@@ -10,9 +11,18 @@ class Dashboard extends Component
 
     public $search;
 
+    public $results;
+
     public function mount()
     {
         $this->links = auth()->user()->links;
+    }
+
+    public function updatedSearch()
+    {
+        $this->results = Link::search($this->search)
+            ->where('user_id', auth()->id())
+            ->get();
     }
 
     public function render()

@@ -24,7 +24,8 @@
         "spatie/laravel-schemaless-attributes": "^1.8",
         "tonysm/turbo-laravel": "^0.3.1",
         "vinkla/hashids": "^9.1",
-        "wyattcast44/laravelschema": "^2.1"
+        "wyattcast44/laravelschema": "^2.1",
+        "yab/laravel-scout-mysql-driver": "^3.0"
     },
     "require-dev": {
         "brianium/paratest": "^6.2",

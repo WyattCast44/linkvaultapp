@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use App\Domain\Support\HashIds\Traits\UsesHashIds;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Link extends Model
 {
-    use HasFactory, UsesHashIds;
+    use HasFactory, UsesHashIds, Searchable;
 
     public $guarded  = [];
 
@@ -45,5 +46,20 @@ class Link extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        return [
+            'url' => $this->url,
+            'data' => $this->data,
+            'user_id' => $this->user_id,
+            'hash_id' => $this->hash_id,
+        ];
     }
 }
