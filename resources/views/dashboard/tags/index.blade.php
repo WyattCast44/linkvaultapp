@@ -2,11 +2,11 @@
     
     <div class="max-w-3xl mx-auto">
 
-        <div class="flex items-center justify-between mx-4 my-5 md:mx-0">
+        <div class="flex flex-col justify-between mx-4 my-5 space-y-3 md:flex-row md:items-center md:mx-0 md:space-y-0">
             <h2 class="text-3xl font-semibold">Your Tags</h2>
             
             <label for="tag">
-                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model="newTag" wire:keydown.enter="createTag" autocomplete="off">
+                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model="newTag" wire:keydown.enter="createTag" autocomplete="off" class="w-full md:w-auto">
             </label>
         </div>
 
