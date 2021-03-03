@@ -2,7 +2,7 @@
     
     <div class="max-w-3xl mx-auto">
 
-        <div class="flex items-center justify-between my-5">
+        <div class="flex items-center justify-between mx-4 my-5 md:mx-0">
             <h2 class="text-3xl font-semibold">Your Tags</h2>
             
             <label for="tag">

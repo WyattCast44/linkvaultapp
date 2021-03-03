@@ -8,6 +8,8 @@ class Dashboard extends Component
 {
     public $links;
 
+    public $search;
+
     public function mount()
     {
         $this->links = auth()->user()->links;
