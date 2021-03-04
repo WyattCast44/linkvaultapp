@@ -1,0 +1,54 @@
+{
+    "title": "Laravel Scout - Laravel - The PHP Framework For Web Artisans",
+    "description": null,
+    "url": "https:\/\/laravel.com\/docs\/8.x\/scout",
+    "type": "link",
+    "tags": [],
+    "image": null,
+    "image_width": null,
+    "image_height": null,
+    "images": [],
+    "embed_code": null,
+    "embed_width": null,
+    "embed_height": null,
+    "embed_aspect": null,
+    "author_name": null,
+    "author_url": null,
+    "provider_name": "laravel",
+    "provider_url": "https:\/\/laravel.com",
+    "provider_icon": "https:\/\/laravel.com\/img\/favicon\/apple-touch-icon.png",
+    "provider_icons": [
+        {
+            "url": "https:\/\/laravel.com\/img\/favicon\/apple-touch-icon.png",
+            "width": 180,
+            "height": 180,
+            "size": 32400,
+            "mime": "image\/png"
+        },
+        {
+            "url": "https:\/\/laravel.com\/img\/favicon\/favicon-32x32.png",
+            "width": 32,
+            "height": 32,
+            "size": 1024,
+            "mime": "image\/png"
+        },
+        {
+            "url": "https:\/\/laravel.com\/img\/favicon\/favicon-16x16.png",
+            "width": 16,
+            "height": 16,
+            "size": 256,
+            "mime": "image\/png"
+        },
+        {
+            "url": "https:\/\/laravel.com\/img\/favicon\/favicon.ico",
+            "width": 16,
+            "height": 16,
+            "size": 256,
+            "mime": "image\/x-icon"
+        }
+    ],
+    "published_date": null,
+    "license": null,
+    "linked_data": null,
+    "feeds": null
+}
