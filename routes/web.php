@@ -1,6 +1,5 @@
 <?php
 
-use App\Domain\Support\Scrapers\Embed;
 use App\Http\Livewire\TagShow;
 use App\Http\Livewire\TagIndex;
 use App\Http\Livewire\LinkShow;

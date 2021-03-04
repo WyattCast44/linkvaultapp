@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Arr;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -61,5 +62,22 @@ class Link extends Model
             'user_id' => $this->user_id,
             'hash_id' => $this->hash_id,
         ];
+    }
+
+    public function getIconName()
+    {
+        $icons = [
+            'video' => 'film',
+            'link' => 'link',
+            'youtube' => 'youtube',
+        ];
+
+        $type = (isset($this->data['type'])) ? $this->data['type'] : 'link';
+
+        $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "YouTube") ? 'youtube' : $type;
+
+        $icon = Arr::get($icons, $type, 'link');
+
+        return $icon;
     }
 }
