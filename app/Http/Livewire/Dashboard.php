@@ -11,7 +11,7 @@ class Dashboard extends Component
 
     public $search;
 
-    public $results;
+    public $results = null;
 
     public function mount()
     {
@@ -20,9 +20,13 @@ class Dashboard extends Component
 
     public function updatedSearch()
     {
-        $this->results = Link::search($this->search)
-            ->where('user_id', auth()->id())
-            ->get();
+        if ($this->search != "") {
+            $this->results = Link::search($this->search)
+                ->where('user_id', auth()->id())
+                ->get();
+        } else {
+            $this->results = null;
+        }
     }
 
     public function render()

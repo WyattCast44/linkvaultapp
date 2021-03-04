@@ -6,7 +6,7 @@
         "hash_id": "string",
         "url": "text",
         "url_hash": "string",
-        "data": "json",
+        "data": "text",
         "created_at": "datetime",
         "updated_at": "datetime",
         "parsed_at": "datetime"

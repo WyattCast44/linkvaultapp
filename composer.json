@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "blade-ui-kit/blade-icons": "^0.5.1",
+        "doctrine/dbal": "^3.0",
         "embed/embed": "^3.4",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -24,7 +25,7 @@
         "spatie/laravel-schemaless-attributes": "^1.8",
         "tonysm/turbo-laravel": "^0.3.1",
         "vinkla/hashids": "^9.1",
-        "wyattcast44/laravelschema": "^2.1",
+        "wyattcast44/laravelschema": "^3.0",
         "yab/laravel-scout-mysql-driver": "^3.0"
     },
     "require-dev": {

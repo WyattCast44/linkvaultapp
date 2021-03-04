@@ -1,18 +1,19 @@
-<div>
+<div class="max-w-2xl mx-4 my-10 md:mx-auto">
     
     <x-errors.inline-validation key="auth" />
 
-    <form wire:submit.prevent="authenticate" class="space-y-2">
+    <form wire:submit.prevent="authenticate" class="space-y-4">
 
-        <label for="email" class="block">
+        <label for="email" class="flex flex-col space-y-2">
 
-            <span>Email Address</span>
+            <span class="block">Email Address</span>
 
             <input 
-                class=""
+                autofocus
                 id="email"
                 type="email" 
                 name="email"
+                autocomplete="email"
                 wire:model.lazy="email"
                 required>
 
@@ -20,12 +21,11 @@
 
         <x-errors.inline-validation key="email" />
 
-        <label for="password" class="block">
+        <label for="password" class="flex flex-col space-y-2">
 
             <span>Password</span>
 
             <input 
-                class=""
                 id="password"
                 type="password" 
                 name="password"
@@ -36,16 +36,16 @@
 
         <x-errors.inline-validation key="password" />
 
-        <div class="block">
+        <div class="flex flex-col items-center space-y-2">
 
-            <button type="submit" class="p-2 border">
+            <button type="submit" class="w-full p-2 text-center transition-all duration-200 bg-gray-300 border hover:bg-gray-400">
                 Login
             </button>
+
+            <a href="{{ route('password.email') }}">Forgot Password?</a>
 
         </div>
 
     </form>
-
-    <a href="{{ route('password.email') }}">Forgot Password?</a>
     
 </div>
