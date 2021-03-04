@@ -49,16 +49,6 @@ class Link extends Model
     }
 
     /**
-     * Get the name of the index associated with the model.
-     *
-     * @return string
-     */
-    public function searchableAs()
-    {
-        return 'links_index';
-    }
-
-    /**
      * Get the indexable data array for the model.
      *
      * @return array
