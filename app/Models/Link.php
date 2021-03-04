@@ -59,18 +59,6 @@ class Link extends Model
     }
 
     /**
-     * Modify the query used to retrieve models when making all of the models searchable.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    protected function makeAllSearchableUsing($query)
-    {
-        return $query->with('tags');
-    }
-
-
-    /**
      * Get the indexable data array for the model.
      *
      * @return array
