@@ -12,7 +12,7 @@
                 'link' => 'link',
             ];
             $type = (isset($link->data['type'])) ? $link->data['type'] : 'link';
-            $icon = $icons[$type];
+            $icon = Arr::get($icons, $type, 'link');
         @endphp
 
         @svg($icon, "w-5 h-5 text-gray-300")
