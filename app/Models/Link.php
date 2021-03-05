@@ -70,11 +70,14 @@ class Link extends Model
             'video' => 'film',
             'link' => 'link',
             'youtube' => 'youtube',
+            'twitter' => 'twitter',
         ];
 
         $type = (isset($this->data['type'])) ? $this->data['type'] : 'link';
 
         $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "YouTube") ? 'youtube' : $type;
+
+        $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "Twitter") ? 'twitter' : $type;
 
         $icon = Arr::get($icons, $type, 'link');
 
