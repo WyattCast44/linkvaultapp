@@ -76,13 +76,14 @@ class Link extends Model
             'gitlab' => 'gitlab',
             'podcast' => 'mic',
             'earth' => 'earth',
+            'codepen' => 'codepen',
         ];
 
         $type = (isset($this->data['type'])) ? $this->data['type'] : 'link';
 
         if (isset($this->data['provider_name'])) {
             switch ($this->data['provider_name']) {
-                case 'Youtube':
+                case 'YouTube':
                     $type = 'youtube';
                     break;
                 case 'Twitter':
@@ -94,16 +95,16 @@ class Link extends Model
                 case 'Apple Podcasts':
                     $type = 'podcast';
                     break;
-                case 'Google Earth':
+                case 'Google Maps':
                     $type = 'earth';
                     break;
                 default:
                     $type = $type;
                     break;
             }
+        } else {
+            $type = (Str::startsWith($this->url, ['https://codepen.io/', 'http://codepen.io/']) == "Codepen") ? 'codepen' : $type;
         }
-
-        $type = (Str::startsWith($this->url, ['https://codepen.io/', 'http://codepen.io/']) == "Codepen") ? 'codepen' : $type;
 
         return Arr::get($icons, $type, 'link');
     }
