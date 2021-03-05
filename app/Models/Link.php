@@ -89,7 +89,7 @@ class Link extends Model
                 case 'Twitter':
                     $type = 'twitter';
                     break;
-                case 'Github':
+                case 'GitHub':
                     $type = 'github';
                     break;
                 case 'Apple Podcasts':

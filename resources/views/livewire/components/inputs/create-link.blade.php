@@ -12,7 +12,7 @@
             wire:model="newLinkUrl"
             aria-label="Save a new URL"
             wire:keydown.enter="createLink"
-            class="w-full pl-10 border border-t-0 border-b-0 border-gray-300 bg-gray-50">
+            class="w-full pl-10 placeholder-gray-600 bg-indigo-100 border border-t-0 border-b-0 border-gray-300">
     </label>
 </div>
 
