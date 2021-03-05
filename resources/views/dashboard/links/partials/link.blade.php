@@ -2,14 +2,21 @@
     tabindex="-1"
     id="link-id-{{ $link->hash_id }}" 
     wire:key="link-id-{{ $link->hash_id }}" 
-    class="flex items-center justify-between p-3 outline-none focus:bg-gray-50 focus:ring-2 ring-blue-600 ring-offset-1">
+    class="flex items-center justify-between outline-none focus:bg-gray-50 focus:ring-2 ring-blue-600 ring-offset-1">
     
-    <div class="flex items-center space-x-3 truncate">
-
+    <!-- Icon -->
+    <div class="px-5 py-4">
         @svg($link->getIconName(), "w-5 h-5 text-gray-300")
-        
-        <div class="space-y-2 break-words truncate">
+    </div>
 
+    <!-- Details -->
+    <div class="flex flex-col flex-1 p-3 border-l">
+
+        <span class="text-xs text-gray-500 truncate">
+            {{ Str::title($link->data['provider_name']) }}
+        </span>
+
+        <div>
             <a 
                 rel="noopener" 
                 target="_blank" 
@@ -19,32 +26,35 @@
                 title="Open link in new tab">
                 
                 @if ($link->hasBeenParsed())
-                    {{ $link->data['title'] }}
+                    {{ Str::limit($link->data['title'], 112) }}
                 @else 
                     {{ $link->url }}
                 @endif
                 
             </a>
-    
-            @if ($link->tags->count() > 0)
-                
-                <div class="flex items-center space-x-1">
-                    @foreach ($link->tags as $tag)
-                        <a href="{{ route('dashboard.tags.show', $tag) }}" class="block px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200" title="View tag">
-                            {{ $tag->name }}
-                        </a>
-                    @endforeach
-                </div>
-    
-            @endif
-    
         </div>
 
+        @if ($link->tags->count() > 0)
+                
+            <div class="flex items-center mt-1 space-x-1">
+                @foreach ($link->tags as $tag)
+                    <a href="{{ route('dashboard.tags.show', $tag) }}" class="flex items-center justify-center px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200" title="View tag">
+                        {{ $tag->name }}
+                    </a>
+                @endforeach
+                <button
+                    title="Add tag to link"
+                    aria-label="Add tag to link"
+                    class="py-1 px-1.5 text-xs border rounded hover:bg-gray-200 text-blue-600 flex items-center justify-center">
+                    <x-icon-plus class="w-4 h-4" />
+                </button>
+            </div>
+
+        @endif
     </div>
-    
 
-    <div class="flex items-center space-x-2">
-
+    <!-- Actions -->
+    <div class="flex items-center p-3 space-x-2">
         <button 
             aria-label="Manage link's tags"    
             title="Manage link's tags"
@@ -66,7 +76,6 @@
             wire:click="deleteLink({{ $link->id }})" class="flex items-center justify-center">
             <x-icon-trash class="w-5 h-5 text-gray-500 hover:text-gray-700" />
         </button>
-
     </div>
     
 </li>
