@@ -29,12 +29,12 @@
                     referrerpolicy="no-referrer" 
                     title="Open link in new tab">
                     
-                    @if ($link->hasBeenParsed())
+                    @isset($link->data['title'])
                         {{ Str::limit($link->data['title'], 112) }}
-                    @else 
+                    @else
                         {{ $link->url }}
-                    @endif
-                    
+                    @endisset
+                                        
                 </a>
             </div>
     
