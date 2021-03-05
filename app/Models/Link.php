@@ -74,7 +74,7 @@ class Link extends Model
             'twitter' => 'twitter',
             'github' => 'github',
             'gitlab' => 'gitlab',
-            'codepen' => 'codepen',
+            'podcast' => 'mic',
         ];
 
         $type = (isset($this->data['type'])) ? $this->data['type'] : 'link';
@@ -84,6 +84,8 @@ class Link extends Model
         $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "Twitter") ? 'twitter' : $type;
 
         $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "Github") ? 'github' : $type;
+
+        $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "Apple Podcasts") ? 'podcast' : $type;
 
         $type = (Str::startsWith($this->url, ['https://codepen.io/', 'http://codepen.io/']) == "Codepen") ? 'codepen' : $type;
 
