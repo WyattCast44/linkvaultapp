@@ -42,7 +42,7 @@
                     
                 <div class="flex items-center mt-1 space-x-1 overflow-x-scroll md:overflow-hidden">
                     @foreach ($link->tags as $tag)
-                        <a href="{{ route('dashboard.tags.show', $tag) }}" class="flex items-center justify-center px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200" title="View tag">
+                        <a href="{{ route('dashboard.tags.show', $tag) }}" class="flex items-center justify-center px-2 py-1 text-xs border rounded hover:no-underline hover:bg-gray-200 whitespace-nowrap" title="View tag">
                             {{ $tag->name }}
                         </a>
                     @endforeach
