@@ -24,7 +24,7 @@
                 <a 
                     rel="noopener" 
                     target="_blank" 
-                    class="break-words" 
+                    class="break-all" 
                     href="{{ $link->url }}" 
                     referrerpolicy="no-referrer" 
                     title="Open link in new tab">

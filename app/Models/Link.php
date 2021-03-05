@@ -75,22 +75,36 @@ class Link extends Model
             'github' => 'github',
             'gitlab' => 'gitlab',
             'podcast' => 'mic',
+            'earth' => 'earth',
         ];
 
         $type = (isset($this->data['type'])) ? $this->data['type'] : 'link';
 
-        $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "YouTube") ? 'youtube' : $type;
-
-        $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "Twitter") ? 'twitter' : $type;
-
-        $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "Github") ? 'github' : $type;
-
-        $type = (isset($this->data['provider_name']) && $this->data['provider_name'] == "Apple Podcasts") ? 'podcast' : $type;
+        if (isset($this->data['provider_name'])) {
+            switch ($this->data['provider_name']) {
+                case 'Youtube':
+                    $type = 'youtube';
+                    break;
+                case 'Twitter':
+                    $type = 'twitter';
+                    break;
+                case 'Github':
+                    $type = 'github';
+                    break;
+                case 'Apple Podcasts':
+                    $type = 'podcast';
+                    break;
+                case 'Google Earth':
+                    $type = 'earth';
+                    break;
+                default:
+                    $type = $type;
+                    break;
+            }
+        }
 
         $type = (Str::startsWith($this->url, ['https://codepen.io/', 'http://codepen.io/']) == "Codepen") ? 'codepen' : $type;
 
-        $icon = Arr::get($icons, $type, 'link');
-
-        return $icon;
+        return Arr::get($icons, $type, 'link');
     }
 }
