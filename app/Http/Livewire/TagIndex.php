@@ -44,7 +44,11 @@ class TagIndex extends Component
 
     public function loadTags()
     {
-        $this->tags = auth()->user()->tags()->withCount('links')->get();
+        $this->tags = auth()->user()
+            ->tags()
+            ->withCount('links')
+            ->orderBy('links_count', 'desc')
+            ->get();
     }
 
     public function render()
