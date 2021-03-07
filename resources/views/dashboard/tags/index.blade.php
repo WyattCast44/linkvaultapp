@@ -14,7 +14,9 @@
             
             @forelse ($tags as $tag)
             
-                <li class="flex items-center justify-between p-3">
+                <li 
+                    wire:key="tag-key-{{ $tag->slug . '-' . $tag->id }}"
+                    class="flex items-center justify-between p-3">
                     
                     <a href="{{ route('dashboard.tags.show', $tag) }}">
                         {{ $tag->name }} ({{ $tag->links_count }})

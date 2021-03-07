@@ -13,7 +13,7 @@ class TagIndex extends Component
 
     public function mount()
     {
-        $this->tags = auth()->user()->tags()->withCount('links')->get();
+        $this->loadTags();
     }
 
     public function createTag()
@@ -29,7 +29,7 @@ class TagIndex extends Component
 
         $this->newTag = "";
 
-        $this->tags = auth()->user()->tags;
+        $this->loadTags();
     }
 
     public function deleteTag($tag)
@@ -38,8 +38,13 @@ class TagIndex extends Component
 
         if ($tag) {
             $tag->delete();
-            $this->tags = auth()->user()->tags;
+            $this->loadTags();
         }
+    }
+
+    public function loadTags()
+    {
+        $this->tags = auth()->user()->tags()->withCount('links')->get();
     }
 
     public function render()
