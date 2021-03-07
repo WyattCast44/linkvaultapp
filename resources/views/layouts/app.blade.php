@@ -6,17 +6,22 @@
         
         <div class="border-indigo-700 bg-gradient-to-r from-indigo-500 to-purple-500">
             <div class="flex items-center justify-between max-w-3xl p-3 mx-auto space-x-2">
+                
+                <!-- Logo -->
                 <h1>
                     <a href="{{ route('dashboard') }}" class="font-mono font-bold tracking-tight text-transparent text-white hover:no-underline hover:text-white">
                         Link Vault 🔒
                     </a>
                 </h1>
+
+                <!-- Account Actions Dropdown -->
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="btn-link" aria-label="Logout" title="Logout">
                         <x-icon-logout class="w-6 h-6 text-white hover:text-opacity-75" />
                     </button>
                 </form>    
+                
             </div>
         </div>
 

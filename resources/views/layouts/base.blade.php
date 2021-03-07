@@ -28,11 +28,5 @@
     <livewire:components.modals.command-palette />
 
     @stack('scripts')
-
-    <script>
-        document.addEventListener("turbo:load", function() {
-            document.activeElement.blur();
-        })
-    </script>
 </body>
 </html>

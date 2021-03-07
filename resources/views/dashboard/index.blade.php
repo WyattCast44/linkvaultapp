@@ -15,7 +15,7 @@
                 autocomplete="off"
                 spellcheck="false"
                 wire:model="search"
-                placeholder="Search Linkvault">
+                placeholder="Search your link vault">
 
         </div>
 
