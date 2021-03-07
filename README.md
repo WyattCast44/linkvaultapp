@@ -7,6 +7,7 @@ php artisan migrate
 php artisan optimize:clear
 php artisan optimize
 php artisan scout:import "App\Models\Link"
+php artisan scout:import "App\Models\Tag"
 ```
 
 # Local Development
