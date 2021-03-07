@@ -21,6 +21,8 @@ class TagShow extends Component
 
         $tag->load(['links']);
 
+        $tag->loadCount('links');
+
         $this->links = $tag->links;
     }
 

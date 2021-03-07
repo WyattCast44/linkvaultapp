@@ -13,8 +13,7 @@ class TagIndex extends Component
 
     public function mount()
     {
-        $this->tags = auth()->user()->tags;
-        $this->links = auth()->user()->links;
+        $this->tags = auth()->user()->tags()->withCount('links')->get();
     }
 
     public function createTag()

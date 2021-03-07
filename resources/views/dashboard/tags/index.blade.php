@@ -16,7 +16,9 @@
             
                 <li class="flex items-center justify-between p-3">
                     
-                    <a href="{{ route('dashboard.tags.show', $tag) }}">{{ $tag->name }}</a>
+                    <a href="{{ route('dashboard.tags.show', $tag) }}">
+                        {{ $tag->name }} ({{ $tag->links_count }})
+                    </a>
 
                     <div class="flex items-center space-x-2">
                         
