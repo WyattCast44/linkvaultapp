@@ -14,17 +14,12 @@ class LinkIndex extends Component
     public $activeLink = null;
 
     protected $listeners = [
-        'linkAdded' => 'updateLinks',
+        'linkAdded' => 'loadLinks',
     ];
 
     public function mount()
     {
-        $this->links = auth()->user()->links;
-    }
-
-    public function updateLinks()
-    {
-        $this->links = auth()->user()->refresh()->links;
+        $this->loadLinks();
     }
 
     public function deleteLink($link)
@@ -33,8 +28,13 @@ class LinkIndex extends Component
 
         if ($link) {
             $link->delete();
-            $this->links = auth()->user()->links;
+            $this->loadLinks();
         }
+    }
+
+    public function loadLinks()
+    {
+        $this->links = auth()->user()->links()->with('tags')->get();
     }
 
     public function render()
