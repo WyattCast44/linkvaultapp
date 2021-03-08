@@ -7,7 +7,7 @@
         </div>
 
         <ul class="mb-8 bg-white border divide-y">
-            @forelse ($links as $link)
+            @forelse ($tag->links as $link)
                 @include('dashboard.links.partials.link')
             @empty
                 <li class="p-3">

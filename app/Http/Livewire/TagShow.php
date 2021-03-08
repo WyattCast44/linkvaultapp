@@ -13,26 +13,25 @@ class TagShow extends Component
 
     public function mount(Tag $tag)
     {
-        $this->tag = $tag;
-
         if (!auth()->user()->tags()->find($tag->id)) {
             return abort(404);
         }
 
-        $tag->load(['links']);
+        $this->tag = $tag;
 
-        $tag->loadCount('links');
+        $this->tag->load(['links']);
 
-        $this->links = $tag->links;
+        $this->tag->loadCount('links');
     }
 
-    public function unlinkTag($link)
+    public function deleteLink($link)
     {
         $link = auth()->user()->links()->find($link);
 
         if ($link) {
             $link->tags()->detach($this->tag->id);
-            $this->links = $this->tag->refresh()->links;
+            $this->tag->loadCount('links');
+            $this->tag->load('links');
         }
     }
 
