@@ -14,7 +14,7 @@ class LinkIndex extends Component
     public $activeLink = null;
 
     protected $listeners = [
-        'linkAdded' => 'loadLinks',
+        'linkAdded' => 'render',
     ];
 
     public function deleteLink($link)
