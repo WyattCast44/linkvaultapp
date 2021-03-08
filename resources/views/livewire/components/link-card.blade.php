@@ -1,7 +1,6 @@
 <li 
     tabindex="-1"
-    id="link-id-{{ $link->hash_id }}" 
-    wire:key="link-id-{{ $link->hash_id }}" 
+    id="link-card-{{ $link->hash_id }}" 
     class="flex items-center justify-between outline-none focus:bg-gray-50 focus:ring-2 ring-blue-600 ring-offset-1">
     
     <!-- Icon -->

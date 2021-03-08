@@ -13,23 +13,22 @@ class LinkIndex extends Component
 
     public $activeLink = null;
 
+    protected $links;
+
     protected $listeners = [
         'linkAdded' => 'render',
+        'linkDeleted' => 'render',
     ];
 
-    public function deleteLink($link)
+    public function loadLinks()
     {
-        $link = auth()->user()->links()->find($link);
-
-        if ($link) {
-            $link->delete();
-        }
+        return auth()->user()->links()->with('tags')->paginate(50);
     }
 
     public function render()
     {
         return view('dashboard.links.index', [
-            'links' => auth()->user()->links()->with('tags')->paginate(50),
+            'links' => $this->loadLinks(),
         ])->extends('layouts.app')->section('content');
     }
 }

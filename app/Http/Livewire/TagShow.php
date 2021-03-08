@@ -11,6 +11,10 @@ class TagShow extends Component
 
     public $links;
 
+    protected $listeners = [
+        'linkDeleted' => 'loadLinks',
+    ];
+
     public function mount(Tag $tag)
     {
         if (!auth()->user()->tags()->find($tag->id)) {
@@ -19,9 +23,7 @@ class TagShow extends Component
 
         $this->tag = $tag;
 
-        $this->tag->load(['links']);
-
-        $this->tag->loadCount('links');
+        $this->loadLinks();
     }
 
     public function deleteLink($link)
@@ -33,6 +35,13 @@ class TagShow extends Component
             $this->tag->loadCount('links');
             $this->tag->load('links');
         }
+    }
+
+    public function loadLinks()
+    {
+        $this->tag->load(['links']);
+
+        $this->tag->loadCount('links');
     }
 
     public function render()

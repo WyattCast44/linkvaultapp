@@ -29,7 +29,7 @@
 
                 @foreach ($results as $link)
                     
-                    @include('dashboard.links.partials.link')
+                    <livewire:components.link-card :link="$link" :key="$link->hash_id" />
 
                 @endforeach
                 

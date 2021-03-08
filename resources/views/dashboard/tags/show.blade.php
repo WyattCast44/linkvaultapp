@@ -8,7 +8,7 @@
 
         <ul class="mb-8 bg-white border divide-y">
             @forelse ($tag->links as $link)
-                @include('dashboard.links.partials.link')
+                <livewire:components.link-card :link="$link" :key="$link->hash_id" />
             @empty
                 <li class="p-3">
                     No links yet

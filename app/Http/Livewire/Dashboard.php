@@ -13,6 +13,10 @@ class Dashboard extends Component
 
     public $results = null;
 
+    protected $listeners = [
+        'linkDeleted' => 'render',
+    ];
+
     public function mount()
     {
         $this->links = auth()->user()->links;
