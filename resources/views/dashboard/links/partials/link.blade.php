@@ -14,11 +14,9 @@
 
         <div class="flex flex-col">
 
-            @isset($link->data['provider_name'])
-                <span class="text-xs text-gray-500 truncate">
-                    {{ Str::title($link->data['provider_name']) }}
-                </span>
-            @endisset
+            <span class="text-xs text-gray-500 truncate">
+                {{ $link->getProviderName() }}
+            </span>
 
             <div>
                 <a 

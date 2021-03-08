@@ -76,6 +76,27 @@ class Link extends Model
         return $query->with('tags');
     }
 
+    public function getProviderName()
+    {
+        $provider = (isset($this->data['provider_name'])) ? $this->data['provider_name'] : 'Unknown';
+
+        switch ($provider) {
+            case 'YouTube':
+                $provider = 'Youtube - ' . $this->data['author_name'];
+                break;
+
+            case 'Twitter':
+                $provider = 'Twitter - ' . $this->data['author_name'];
+                break;
+
+            default:
+                $provider = $provider;
+                break;
+        }
+
+        return ucfirst($provider);
+    }
+
     public function getIconName()
     {
         $icons = [
