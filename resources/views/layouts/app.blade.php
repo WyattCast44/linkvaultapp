@@ -46,6 +46,10 @@
                     Tags
                 </a>
 
+                <a href="{{ route('dashboard.search') }}" class="z-0 w-full py-2 text-center text-white hover:bg-indigo-300 hover:text-white hover:no-underline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-600">
+                    Search
+                </a>
+
             </div>
         </div>
         

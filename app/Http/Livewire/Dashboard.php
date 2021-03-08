@@ -7,8 +7,6 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-    public $links;
-
     public $search;
 
     public $results = null;
@@ -16,11 +14,6 @@ class Dashboard extends Component
     protected $listeners = [
         'linkDeleted' => 'render',
     ];
-
-    public function mount()
-    {
-        $this->links = auth()->user()->links;
-    }
 
     public function updatedSearch()
     {
