@@ -6,7 +6,7 @@
             <h2 class="text-3xl font-semibold">Your Tags ({{ $tags->count() }})</h2>
             
             <label for="tag">
-                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model="newTag" wire:keydown.enter="createTag" autocomplete="off" class="w-full md:w-auto">
+                <input type="text" name="tag" id="tag" placeholder="Create tag" wire:model.lazy="newTag" wire:keydown.enter="createTag" autocomplete="off" class="w-full md:w-auto">
             </label>
         </div>
 

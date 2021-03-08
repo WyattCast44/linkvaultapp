@@ -21,13 +21,17 @@
 
         @if ($tags->count() > 0)
             
-        <div class="flex my-5 space-x-1">
+        <div class="flex flex-wrap my-5 space-x-1 space-y-1">
             @foreach ($tags as $tag)
                 <button type="button" class="flex items-center justify-center px-2 py-1 text-sm transition duration-100 bg-white border rounded hover:no-underline hover:bg-indigo-300 whitespace-nowrap" title="Apply tag filter" wire:click="toggleTagFilter({{ $tag->id }})">
                     {{ $tag->name }}
-                    @if (in_array($tag->slug, $activeTags))
-                        <x-icon-x class="w-3 h-3" />
-                    @endif
+
+                    <div class="flex items-center justify-center ml-1">
+                        @if (in_array($tag->slug, $activeTags))
+                            <x-icon-x class="w-3 h-3" />
+                        @endif
+                    </div>
+
                 </button>
             @endforeach
         </div>
