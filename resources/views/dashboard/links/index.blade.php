@@ -16,7 +16,7 @@
             @endforelse
         </ul>
 
-        <div>
+        <div class="my-10">
             {{ $links->links() }}
         </div>
 
