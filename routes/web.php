@@ -7,7 +7,6 @@ use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\LinkIndex;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Models\User;
 
 Route::get('/', HomeController::class)->name('welcome')->middleware('guest');
 
